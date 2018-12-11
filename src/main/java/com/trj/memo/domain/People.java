@@ -2,10 +2,22 @@ package com.trj.memo.domain;
 
 import lombok.Data;
 
+import javax.persistence.*;
+
 @Data
+@Entity
 public class People {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(nullable = false, length = 5)
     private String name;
+    @Column
     private int age;
+
+    @Transient
     private boolean sign;
 
     public People() {
@@ -29,3 +41,4 @@ public class People {
         System.out.println(people.getName());
     }
 }
+
