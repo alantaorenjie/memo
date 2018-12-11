@@ -27,19 +27,13 @@ public class CacheApplicationTest {
         User u2 = userRepository.findByName("AAA");
         System.out.println("第二次查询：" + u2.getAge());
 
-        userRepository.save(new User("BBB",22));
+        u1.setAge(100);
+        userRepository.save(u1);
 
         User u3 = userRepository.findByName("AAA");
-        System.out.println("第一次查询：" + u3.getAge());
+        System.out.println("第三次查询：" + u3.getAge());
 
-        User u4 = userRepository.findByName("AAA");
-        System.out.println("第二次查询：" + u4.getAge());
 
-        User u5 = userRepository.findByName("BBB");
-        System.out.println("第一次查询：" + u5.getAge());
-
-        User u6 = userRepository.findByName("BBB");
-        System.out.println("第二次查询：" + u6.getAge());
 
     }
 }
